@@ -85,3 +85,29 @@ console.log(mondayWork("work from home")); // "This Monday, I will work from hom
 const encouragingPromptFunction = wrapAdjective("!!!");
 console.log(encouragingPromptFunction()); // "You are !!!special!!!!"
 console.log(encouragingPromptFunction("amazing")); // "You are !!!amazing!!!!"
+
+
+// Function 1: saturdayFun
+function saturdayFun(activity = "roller-skate") {
+    return `This Saturday, I want to ${activity}!`;
+  }
+  
+  // Function 2: mondayWork
+  function mondayWork(task = "go to the office") {
+    return `This Monday, I will ${task}.`;
+  }
+  
+  // Function 3: wrapAdjective
+  function wrapAdjective(flair = "*") {
+    return function(adjective = "special") {
+      return `You are ${flair}${adjective}${flair}!`;
+    };
+  }
+  
+  // Export the functions to be used in tests
+  module.exports = {
+    saturdayFun,
+    mondayWork,
+    wrapAdjective
+  };
+  
