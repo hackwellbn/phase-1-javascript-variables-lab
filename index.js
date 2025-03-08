@@ -111,3 +111,18 @@ function saturdayFun(activity = "roller-skate") {
     wrapAdjective
   };
   
+// Example usage:
+
+// 1. Testing receivesAFunction
+receivesAFunction(() => {
+    console.log("Callback function called");
+  });
+  
+  // 2. Testing returnsANamedFunction
+  const namedFunc = returnsANamedFunction();
+  namedFunc(); // Output: "I am a named function"
+  
+  // 3. Testing returnsAnAnonymousFunction
+  const anonymousFunc = returnsAnAnonymousFunction();
+  anonymousFunc(); // Output: "I am an anonymous function"
+  
