@@ -126,3 +126,18 @@ receivesAFunction(() => {
   const anonymousFunc = returnsAnAnonymousFunction();
   anonymousFunc(); // Output: "I am an anonymous function"
   
+
+  // Test for selectingDrivers
+const drivers = ["Alice", "Bob", "Charlie", "David"];
+
+console.log(selectingDrivers[0](drivers)); // Returns first two drivers ["Alice", "Bob"]
+console.log(selectingDrivers[1](drivers)); // Returns last two drivers ["Charlie", "David"]
+
+// Test for fareDoubler and fareTripler
+const fare = 10;
+console.log(fareDoubler(fare)); // Doubles the fare, outputs 20
+console.log(fareTripler(fare)); // Triples the fare, outputs 30
+
+// Test for selectDifferentDrivers
+console.log(selectDifferentDrivers(drivers, returnFirstTwoDrivers)); // Returns ["Alice", "Bob"]
+console.log(selectDifferentDrivers(drivers, returnLastTwoDrivers)); // Returns ["Charlie", "David"]
