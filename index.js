@@ -1,143 +1,116 @@
-// Code your solution in this file!
-let companyName = 'elevated steel solutions'
+// Declare companyName as a const
+const companyName = 'elevated steel solutions';
 
-const greetingsUpdates = `${companyName.slice(0, 3)} can be sliced as well`
+// Declare mostProfitableNeighborhood as a const
+const mostProfitableNeighborhood = 'Chelsea';
 
-
-
-function addData(sampleData){
-    if(sampleData < 10){
-        result =  sampleData + 1
-    }
-    return result
-
+// Function: Saturday Fun
+function saturdayFun(activity = "roller-skate") {
+  return `This Saturday, I want to ${activity}!`;
 }
 
-addData(20)
+// Function: Monday Work
+function mondayWork(task = "go to the office") {
+  return `This Monday, I will ${task}.`;
+}
 
+// Function: Wrap Adjective
+function wrapAdjective(flair = "*") {
+  return function(adjective = "special") {
+    return `You are ${flair}${adjective}${flair}!`;
+  };
+}
 
+// Function: Scuber Greeting for Feet
 function scuberGreetingForFeet(distance) {
-    if (distance <= 400) {
-      return "This will be a great ride!";
-    } else if (distance > 400 && distance <= 2000) {
-      return "That will be a big ride!";
-    } else if (distance > 2000 && distance <= 2500) {
-      return "I hope you have a wonderful trip!";
-    } else {
-      return "Sorry, we don't provide rides for this distance.";
-    }
+  if (distance <= 400) {
+    return "This will be a great ride!";
+  } else if (distance > 400 && distance <= 2000) {
+    return "That will be a big ride!";
+  } else if (distance > 2000 && distance <= 2500) {
+    return "I hope you have a wonderful trip!";
+  } else {
+    return "Sorry, we don't provide rides for this distance.";
   }
+}
 
+// Function: Ternary Check City
+function ternaryCheckCity(city) {
+  return city === "NYC" ? "Welcome to the Big Apple!" : "Sorry, we only serve NYC.";
+}
 
-  function ternaryCheckCity(city) {
-    return city === "NYC" ? "Welcome to the Big Apple!" : "Sorry, we only serve NYC.";
+// Function: Switch on Charm from Tip
+function switchOnCharmFromTip(tip) {
+  switch (tip) {
+    case "generous":
+      return "Thank you for your generosity!";
+    case "not generous":
+      return "Thank you for riding with us.";
+    default:
+      return "Have a nice day!";
   }
+}
 
-  
-  function switchOnCharmFromTip(tip) {
-    switch (tip) {
-      case "generous":
-        return "Thank you for your generosity!";
-      case "not generous":
-        return "Thank you for riding with us.";
-      default:
-        return "Have a nice day!";
-    }
-  }
-  
+// Higher-order function: createFareMultiplier
+function createFareMultiplier(multiplier) {
+  return function(fare) {
+    return fare * multiplier;
+  };
+}
 
-  let num1 = 31;
-let num2 = 2;
-let multiply = num1 * num2;
+// Fare multiplier functions
+const fareDoubler = createFareMultiplier(2);
+const fareTripler = createFareMultiplier(3);
 
-let random = Math.floor(Math.random() * 100) + 1;
+// Array of drivers
+const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
 
-let num3 = 20;
-let num4 = 6;
-let mod = num3 % num4;
+// Functions to return the first and last two drivers
+function returnFirstTwoDrivers(drivers) {
+  return drivers.slice(0, 2);
+}
 
-let numbers = [10, 15, 20, 5, 30];
-let max = Math.max(...numbers);
+function returnLastTwoDrivers(drivers) {
+  return drivers.slice(-2);
+}
 
-function saturdayFun(activity = "roller-skate") {
-    return `This Saturday, I want to ${activity}!`;
-  }
+// Function: Select Different Drivers
+function selectDifferentDrivers(drivers, func) {
+  return func(drivers);
+}
 
-  function mondayWork(task = "go to the office") {
-    return `This Monday, I will ${task}.`;
-  }
-
-  function wrapAdjective(flair = "*") {
-    return function(adjective = "special") {
-      return `You are ${flair}${adjective}${flair}!`;
-    };
-  }
-
-  // Test saturdayFun
+// Example test cases
 console.log(saturdayFun()); // "This Saturday, I want to roller-skate!"
 console.log(saturdayFun("hike")); // "This Saturday, I want to hike!"
 
-// Test mondayWork
 console.log(mondayWork()); // "This Monday, I will go to the office."
 console.log(mondayWork("work from home")); // "This Monday, I will work from home."
 
-// Test wrapAdjective
 const encouragingPromptFunction = wrapAdjective("!!!");
 console.log(encouragingPromptFunction()); // "You are !!!special!!!!"
 console.log(encouragingPromptFunction("amazing")); // "You are !!!amazing!!!!"
 
-
-// Function 1: saturdayFun
-function saturdayFun(activity = "roller-skate") {
-    return `This Saturday, I want to ${activity}!`;
-  }
-  
-  // Function 2: mondayWork
-  function mondayWork(task = "go to the office") {
-    return `This Monday, I will ${task}.`;
-  }
-  
-  // Function 3: wrapAdjective
-  function wrapAdjective(flair = "*") {
-    return function(adjective = "special") {
-      return `You are ${flair}${adjective}${flair}!`;
-    };
-  }
-  
-  // Export the functions to be used in tests
-  module.exports = {
-    saturdayFun,
-    mondayWork,
-    wrapAdjective
-  };
-  
-// Example usage:
-
-// 1. Testing receivesAFunction
-receivesAFunction(() => {
-    console.log("Callback function called");
-  });
-  
-  // 2. Testing returnsANamedFunction
-  const namedFunc = returnsANamedFunction();
-  namedFunc(); // Output: "I am a named function"
-  
-  // 3. Testing returnsAnAnonymousFunction
-  const anonymousFunc = returnsAnAnonymousFunction();
-  anonymousFunc(); // Output: "I am an anonymous function"
-  
-
-  // Test for selectingDrivers
-const drivers = ["Alice", "Bob", "Charlie", "David"];
-
-console.log(selectingDrivers[0](drivers)); // Returns first two drivers ["Alice", "Bob"]
-console.log(selectingDrivers[1](drivers)); // Returns last two drivers ["Charlie", "David"]
-
-// Test for fareDoubler and fareTripler
+// Test fareDoubler and fareTripler
 const fare = 10;
 console.log(fareDoubler(fare)); // Doubles the fare, outputs 20
 console.log(fareTripler(fare)); // Triples the fare, outputs 30
 
 // Test for selectDifferentDrivers
-console.log(selectDifferentDrivers(drivers, returnFirstTwoDrivers)); // Returns ["Alice", "Bob"]
-console.log(selectDifferentDrivers(drivers, returnLastTwoDrivers)); // Returns ["Charlie", "David"]
+const drivers = ["Alice", "Bob", "Charlie", "David"];
+console.log(selectDifferentDrivers(drivers, returnFirstTwoDrivers)); // ["Alice", "Bob"]
+console.log(selectDifferentDrivers(drivers, returnLastTwoDrivers)); // ["Charlie", "David"]
+
+// Export functions for testing
+module.exports = {
+  saturdayFun,
+  mondayWork,
+  wrapAdjective,
+  scuberGreetingForFeet,
+  ternaryCheckCity,
+  switchOnCharmFromTip,
+  fareDoubler,
+  fareTripler,
+  selectDifferentDrivers,
+  mostProfitableNeighborhood,
+  companyName
+};
